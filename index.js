@@ -7,6 +7,8 @@ const fs = require("fs")
 let baseUrl = 'https://mywaifulist.moe';
 let db = require("./waifus.json");
 
+let num = 0;
+
 (async () => {
 
     for (let i = 1; i!==4859; i++) {
@@ -42,7 +44,8 @@ let db = require("./waifus.json");
             db[name] = json
             fs.writeFileSync("./waifus.json", JSON.stringify(db, 0, 4))
 
-            console.log(`+ ${name} ajoutée`)
+		num++
+            console.log(`${num} + ${name} ajoutée`)
 
         })
     
